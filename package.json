@@ -4,6 +4,7 @@
   "description": "Test",
   "main": "main.js",
   "scripts": {
+    "compile":"webpack",
     "start": "webpack-dev-server --content-base --inline --hot"
   },
   "dependencies": {
