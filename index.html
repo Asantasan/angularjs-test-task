@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="commentsDirective">
+  <head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="style/style.css"> 
+    <title>AngularTestTask</title>
+  </head>
+
+  <body> 
+    <div ng-controller="CommentsCtrl as cm" class="wrapper"> 
+        <script type="text/ng-template" id="commentsTree">
+          <div class="comment-block">
+              <div class="comment-header">
+                  <div class="comment-avatar">
+                      <img src="https://randomuser.me/api/portraits/med/men/{{item.id}}.jpg" alt="аватар">
+                  </div>
+                  <div>
+                      <span class="username">
+                          <img src="https://l-stat.livejournal.net/img/userinfo_v8.svg?v=17080?v=298" alt="">
+                          <b>{{item.name}}</b>
+                      </span>  
+                      <div class="comment-date">
+                          <span>{{formatDate(item.date)}}</span>
+                      </div>
+                  </div>                          
+              </div>
+                  
+              <div class="comment-text">
+                  <span>{{item.text}}</span>
+              </div>
+  
+              <div ng-if="item.showCommentPanel" ng-include="'commentForm'"></div>
+  
+              <div class="comment-footer">
+                  <span ng-click="showCommentPanel(item)">Ответить</span> 
+                  <span ng-if="item.name == nickname" ng-click="removeCommentText(item)">Удалить</span>     
+               </div>                  
+                  
+          </div>
+      
+              <div ng-if="item.child" class="comment-block" >
+                  <div   ng-repeat="item in item.child" ng-include="'commentsTree'">           
+                  </div>
+            </div>
+           
+           
+            
+        </script>
+        
+        <div class="login-panel" ng-model="nickname">
+            <span class="login-panel-text" ng-click="saveLogin()">{{nickname || 'Log in'}}</span>
+        </div>
+
+        <div class="react-section">             
+            <div class="add-comment-section">
+                <react-directive class="react-component-text"  comments=comments ></react-directive>
+                <button class="add-comment-btn" ng-click="commentFormToggler()"> Добавить комментарий</button>
+                
+            </div>
+            <div ng-if="addCommentState" ng-include="'commentForm'"></div>
+        </div> 
+
+        <div ng-repeat="item in comments" ng-include="'commentsTree'"></div>
+        
+        
+        
+        <script type="text/ng-template" id="commentForm">
+                <table>
+                    <tr>
+                        <td align="right" ><b>Как</b></td>
+                        <td> <input ng-model="nickname"  /> </td>
+                    </tr>
+                    <tr>
+                        <td align="right"><b>Тема</b></td>
+                        <td> <input ng-model="subject" /> </td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"><b>Сообщение</b></td>
+                        <td> <textarea ng-model="body" rows="10" cols="130" > </textarea> </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="submit-btn" ng-click="addComment(item)">Добавить</button></td>
+                    </tr>
+                </table>
+                 
+            
+            </script>  
+ 
+  </div>
+
+    
+    <script src="dist/bundle.js"></script>    
+
+  </body>
+</html>

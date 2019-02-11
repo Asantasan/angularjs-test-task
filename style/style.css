@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'Proxima Nova Thin';
+    src: url('../fonts/ProximaNovaT-Thin.eot');
+    src: url('ProximaNovaT-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/ProximaNovaT-Thin.woff') format('woff'),
+    url('../fonts/ProximaNovaT-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Bold';
+    src: url('../fonts/ProximaNovaT-Bold.eot');
+    src: url('ProximaNovaT-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/ProximaNovaT-Bold.woff') format('woff'),
+    url('../fonts/ProximaNovaT-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Proxima Nova Thin';
+    font-weight: bold;
+} 
+
+li {
+    list-style: none;
+}
+
+ 
+
+.comment-block {
+    position: relative;
+    margin:20px 0px 10px;
+    margin-left: 30px;
+}
+
+.comment-header {
+    background: #EBF0F2;
+    height: 100px;
+    display: flex;
+}
+
+.sub {
+    background: #E3F3FA;
+}
+
+.comment-avatar   {
+     margin: 0px 10px 0px 0px;
+}
+.comment-avatar img {
+    width: 100px;
+    height: 100px;
+}
+
+span.username {
+    color:#00A3D9;    
+     
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin: 7px 0 5px;
+}
+
+.comment-date {
+    font-size: 14px;
+}
+
+.comment-text {
+    max-width: 1100px;
+}
+
+.comment-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-footer span {
+    margin-right: 5px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.comment-footer span:hover {
+    text-decoration: none;
+}
+
+table {
+    margin:20px 0 10px 0;
+    padding-top: 10px;
+    border-top: 1px solid lightgrey;
+}
+
+.react-comments-counter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+ 
+}
+
+.react-section {
+    font-size: 16px;
+}
+
+.add-comment-btn {
+    background: #00A2D9;
+    color: #FFF;
+    border-radius: 20px;
+    width: 200px;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    margin-left: 30px;
+}
+
+.submit-btn { 
+    border-radius: 20px;
+    width: 120px;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+
+.login-panel {
+    height: 30px;   
+    border-bottom: 1px solid lightgrey;
+  
+}
+
+.login-panel-text {
+    cursor: pointer;
+    line-height: 30px;
+    margin-left: 30px;
+}
+
+.login-panel-text:hover {
+    color:lightgray;
+}
+
+.react-component-text {
+    font-weight: bold;
+    font-size: 24px;
+    margin-right: 30px;
+}
+
+.add-comment-section {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
